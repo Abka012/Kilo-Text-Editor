@@ -1,2 +1,14 @@
-kilo: kilo.c 
-	 $(CC) kilo.c -o kilo -Wall -Wextra -pedantic -std=99
+BIN := kilo
+
+.PHONY: all build run clean
+
+all: build
+
+build:
+	cargo build
+
+run:
+	cargo run -- $(FILE)
+
+clean:
+	cargo clean
